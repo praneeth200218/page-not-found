@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="buddy.css"> <!-- Linking to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Welcome Back to EduStation</h1>
+            <h2>Login to Your Account</h2>
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <!-- Input field for email with validation -->
+                    <input type="email" id="login-email" placeholder="Enter your email" required aria-label="Email address">
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <!-- Input field for password with validation -->
+                    <input type="password" id="login-password" placeholder="Enter your password" required aria-label="Password">
+                </div>
+                <div class="input-group">
+                    <label for="role">Login As</label>
+                    <!-- Dropdown to select user role -->
+                    <select id="role" required aria-label="Select your role">
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Content Creator">Content Creator</option>
+                        <option value="Seller">Seller</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <!-- Link to go to signup page -->
+                <p class="switch-page">Don't have an account? <a href="buddy.html">Sign up here</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Linking to the JavaScript file -->
+</body>
+</html>
+ 

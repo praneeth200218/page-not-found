@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="buddy.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Welcome to EduStation</h1>
+            <h2>Create Your Account</h2>
+            <form id="signup-form">
+                <!-- Email Input -->
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <!-- Password Input -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <!-- Role Selection -->
+                <div class="input-group">
+                    <label>Select Your Roles</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="Student" name="roles"> Student</label>
+                        <label><input type="checkbox" value="Teacher" name="roles"> Teacher</label>
+                        <label><input type="checkbox" value="Content Creator" name="roles"> Content Creator</label>
+                        <label><input type="checkbox" value="Seller" name="roles"> Seller</label>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="switch-page">Already have an account? <a href="b1.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        // JavaScript for signup form submission
+        document.getElementById("signup-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const roles = Array.from(document.querySelectorAll('input[name="roles"]:checked')).map(role => role.value);
+
+            if (!email || !password || roles.length === 0) {
+                alert("Please fill all fields and select at least one role.");
+                return;
+            }
+
+            // Simulate saving to localStorage (replace with backend integration in production)
+            localStorage.setItem("user", JSON.stringify({ email, password, roles }));
+            alert("Signup successful! Redirecting to login...");
+            window.location.href = "b1.html"; // Redirect to login page
+        });
+    </script>
+</body>
+</html>
